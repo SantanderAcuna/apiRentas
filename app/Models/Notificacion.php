@@ -11,6 +11,14 @@ class Notificacion extends Model
 
     protected $table = 'notificaciones';
 
+    protected $fillable = [
+        'id_funcionario',
+        'id_peticion',
+        'fecha_vencimiento',
+        'id_lider_area'
+       
+    ];
+
     public function peticion()
     {
         return $this->belongsTo(Peticion::class);

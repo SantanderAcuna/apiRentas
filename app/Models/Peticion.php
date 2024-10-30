@@ -11,7 +11,14 @@ class Peticion extends Model
 
     protected $table = 'peticiones';
 
+    protected $fillable = [
+        'tipo_peticion',
+        'contribuyente_id',
+        'funcionario_id'
+    ];
+
     protected $dates = ['fecha_asignacion', 'fecha_vencimiento'];
+
 
     public function contribuyente()
     {

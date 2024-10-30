@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
-use App\Models\ContribuyenteController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ContribuyenteControllerController extends Controller
+class PeticionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class ContribuyenteControllerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ContribuyenteController $contribuyenteController)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +42,7 @@ class ContribuyenteControllerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ContribuyenteController $contribuyenteController)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +50,7 @@ class ContribuyenteControllerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ContribuyenteController $contribuyenteController)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +58,7 @@ class ContribuyenteControllerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ContribuyenteController $contribuyenteController)
+    public function destroy(string $id)
     {
         //
     }

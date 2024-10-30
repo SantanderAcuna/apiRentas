@@ -11,6 +11,14 @@ class Contribuyente extends Model
 
     protected $table = 'contribuyentes';
 
+    protected $fillable = [
+        'cedula',
+        'nombre_completo',
+        'ref_catastral',
+        'email'
+       
+    ];
+
     public function peticiones()
     {
         return $this->hasMany(Peticion::class);
