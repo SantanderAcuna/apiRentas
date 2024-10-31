@@ -15,16 +15,26 @@ class ApiController extends Controller
 
     // data validation
     $request->validate([
-        "name" => "required",
+        "numero_cedula" => "required",
+        "nombre_completo" => "required",
+        "password" => "required",
+        "area" => "required",
+        "es_lider_area" => "required",
+        "es_director" => "required",
         "email" => "required|email|unique:users",
         "password" => "required|confirmed"
     ]);
 
     // Author model
     User::create([
-        "name" => $request->name,
+        "nombre_completo" => $request->nombre_completo,
+        "numero_cedula" => $request->numero_cedula,
         "email" => $request->email,
-        "password" => Hash::make($request->password)
+        "password" => Hash::make($request->password),
+        "area" => $request->area,
+        "es_lider_area" => $request->es_lider_area,
+        "es_director" => $request->es_director,
+       
     ]);
 
     // Response
