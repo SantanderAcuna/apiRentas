@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('peticiones', function (Blueprint $table) {
+        Schema::create('gestiones', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_peticion');
-            $table->date('fecha_asignacion')->require();
-            $table->foreignId('contribuyente_id')->constrained('contribuyentes')->cascadeOnDelete();
+            $table->string('nombre')->unique();
             $table->foreignId('funcionario_id')->constrained('funcionarios')->cascadeOnDelete();
-            $table->date('fecha_vencimiento')->require();
             $table->timestamps();
         });
     }
@@ -27,9 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('peticiones');
+        Schema::dropIfExists('gestiones');
     }
 };
-
-
-

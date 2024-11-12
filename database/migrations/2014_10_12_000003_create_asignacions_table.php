@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_peticion', function (Blueprint $table) {
-          $table->foreignId('funcionario_id')->constrained('funcionarios')->cascadeOnDelete();
-            $table->foreignId('peticion_id')->constrained('peticiones')->cascadeOnDelete();
-            $table->primary(['funcionario_id', 'peticion_id']);
+        Schema::create('asignacions', function (Blueprint $table) {
+
+            $table->id();
+            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_peticion');
+        Schema::dropIfExists('asignacions');
     }
 };

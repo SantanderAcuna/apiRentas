@@ -13,8 +13,10 @@ class Peticion extends Model
 
     protected $fillable = [
         'tipo_peticion',
+        'fecha_asignacion',
         'contribuyente_id',
-        'funcionario_id'
+        'funcionario_id',
+        'fecha_vencimiento'
     ];
 
     protected $dates = ['fecha_asignacion', 'fecha_vencimiento'];

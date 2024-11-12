@@ -13,6 +13,6 @@ class PeticionSeeder extends Seeder
      */
     public function run(): void
     {
-        Peticion::factory()->count(30)->create();
+        Peticion::factory()->count(10)->create();
     }
 }

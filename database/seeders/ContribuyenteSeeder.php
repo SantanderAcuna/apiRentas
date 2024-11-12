@@ -13,6 +13,6 @@ class ContribuyenteSeeder extends Seeder
      */
     public function run(): void
     {
-        Contribuyente::factory()->count(50)->create();
+        Contribuyente::factory()->count(10)->create();
     }
 }

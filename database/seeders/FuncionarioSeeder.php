@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Notificacion;
+use App\Models\Funcionario;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class NotificacionSeeder extends Seeder
+class FuncionarioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Notificacion::factory()->count(10)->create();
+        Funcionario::factory(10)->create();
     }
 }

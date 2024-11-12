@@ -22,10 +22,10 @@ class ContribuyenteFactory extends Factory
     public function definition(): array
     {
         return [
-            'cedula' => $this->faker->unique()->numerify('##########'),
+            'cedula' => $this->faker->unique()->numberBetween(1000000000, 9999999999),
             'nombre_completo' => $this->faker->name,
             'ref_catastral' => $this->faker->optional()->numerify('CATA-####-###'),
-            'email' => $this->faker->optional()->email,
+            'email' => $this->faker->unique()->safeEmail,
         ];
     }
 }

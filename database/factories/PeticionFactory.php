@@ -23,12 +23,15 @@ class PeticionFactory extends Factory
     public function definition()
     {
         return [
-            'tipo_peticion' => $this->faker->word,
-            'fecha_asignacion' => Carbon::now(),
-            'contribuyente_id' => Contribuyente::factory(),
-            'funcionario_id' => User::factory(),
-            'fecha_vencimiento' => Carbon::now()->addDays($this->faker->numberBetween(1, 30)),
+            'tipo_peticion' => $this->faker->randomElement(['Desembargo', 'Prescripcion', 'Exoneracion']),
+            'fecha_asignacion' => $this->faker->dateTimeBetween('now'),
+            'contribuyente_id' => $this->faker->numberBetween(1, 10),
+            'funcionario_id' => $this->faker->numberBetween(1, 10),
+            'fecha_vencimiento' => Carbon::now()->addDays(15)->format('Y-m-d'),
         ];
     }
 }
+
+
+
 

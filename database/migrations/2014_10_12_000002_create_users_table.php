@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('area')->default('Sin area');
+      
+            $table->string('area')->require();
             $table->boolean('es_lider_area')->default(false);
             $table->boolean('es_director')->default(false);
             $table->rememberToken();

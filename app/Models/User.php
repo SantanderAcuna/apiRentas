@@ -34,6 +34,7 @@ class User extends Authenticatable
         'nombre_completo',
         'email',
         'password',
+        'area',
         'es_lider_area',
         'es_director'
     ];
