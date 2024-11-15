@@ -3,10 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\api\AsignacionController;
 use App\Http\Controllers\api\ContribuyenteController;
 use App\Http\Controllers\api\NotificacionController;
 use App\Http\Controllers\api\PeticionController;
 use App\Http\Controllers\api\UserController;
+use App\Models\Asignacion;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,6 @@ Route::group([
     Route::resource('contribuyente', ContribuyenteController::class);
     Route::resource('peticiones', PeticionController::class);
     Route::resource('User', UserController::class);
-    Route::resource('a', UserController::class);
+    Route::resource('asignaciones', AsignacionController::class);
     Route::resource('notificaciones', NotificacionController::class);
 });

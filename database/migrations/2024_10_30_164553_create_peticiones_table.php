@@ -15,8 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('tipo_peticion');
             $table->date('fecha_asignacion')->require();
-            $table->foreignId('contribuyente_id')->constrained('contribuyentes')->cascadeOnDelete();
-            $table->foreignId('funcionario_id')->constrained('funcionarios')->cascadeOnDelete();
+
+            $table->unsignedBigInteger('contribuyente_id');
+            $table->foreign('contribuyente_id')->references('id')->on('contribuyentes');
+
+            $table->unsignedBigInteger('funcionario_id')->nullable();
+            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
+
             $table->date('fecha_vencimiento')->require();
             $table->timestamps();
         });
@@ -30,6 +35,3 @@ return new class extends Migration
         Schema::dropIfExists('peticiones');
     }
 };
-
-
-
